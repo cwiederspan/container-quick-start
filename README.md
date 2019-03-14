@@ -26,5 +26,5 @@ az container create -g cdw-loadtest-20190313 -n loadtest \
 ```bash
 az container create -g cdw-containerbuildagent-20190108-rg -n cdw-containerbuildagent-20190108 \
   --image mcr.microsoft.com/azure-pipelines/vsts-agent:latest --restart-policy OnFailure \
-  --environment-variables VSTS_ACCOUNT=<<YOUR_TENANT>> VSTS_TOKEN=<<YOUR_PAT_TOKEN>>
+  --environment-variables VSTS_ACCOUNT=<<YOUR_TENANT>> VSTS_TOKEN=<<YOUR_TOKEN>>
 ```
