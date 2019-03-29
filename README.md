@@ -28,3 +28,8 @@ az container create -g cdw-containerbuildagent-20190108-rg -n cdw-containerbuild
   --image mcr.microsoft.com/azure-pipelines/vsts-agent:latest --restart-policy OnFailure \
   --environment-variables VSTS_ACCOUNT=<<YOUR_TENANT>> VSTS_TOKEN=<<YOUR_TOKEN>>
 ```
+
+## Ubuntu Linux
+```bash
+docker run -it --rm ubuntu
+```
