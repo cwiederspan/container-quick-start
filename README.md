@@ -6,6 +6,9 @@ A sampling of quick and easy quickstarts for running various containers for test
 az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westus2 \
   --image mcr.microsoft.com/dotnet/core/samples:aspnetapp \
   --ip-address Public --ports 80 --dns-name-label cdw-dummysite-20190305
+  
+az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westus2 \
+  --image ubuntu --command-line "tail -f /dev/null"
 ```
 
 ## Windows Server 2016 Containers
