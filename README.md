@@ -39,3 +39,18 @@ docker run -it --rm ubuntu
 
 ## Certbot
 [Read More Here](https://github.com/cwiederspan/letsencrypt-utils)
+
+## SQL Server
+```bash
+az container create \
+    --name my-sqlserver-20190411 \
+    --resource-group my-sqlserver-20190411 \
+    --location westus \
+    --image mcr.microsoft.com/mssql/server \
+    --ports 1433 \
+    --vnet aci_vnet1 \
+    --vnet-address-prefix 10.0.0.0/16 \
+    --subnet aci_subnet1 \
+    --subnet-address-prefix 10.0.0.0/24 \
+    --environment-variables ACCEPT_EULA=Y SA_PASSWORD=dUmmyP@ssw0rd
+```
