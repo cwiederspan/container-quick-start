@@ -41,6 +41,9 @@ docker run -it --rm ubuntu
 [Read More Here](https://github.com/cwiederspan/letsencrypt-utils)
 
 ## SQL Server
+
+[Read this article](http://tattoocoder.com/open-source-tools-for-sql-server-on-linux-2/)
+
 ```bash
 az container create \
     --name my-sqlserver-20190411 \
