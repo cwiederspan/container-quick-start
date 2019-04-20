@@ -1,7 +1,9 @@
 # container-quick-start
+
 A sampling of quick and easy quickstarts for running various containers for testing or demo purposes
 
 ## Linux Containers
+
 ```bash
 az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westus2 \
   --image mcr.microsoft.com/dotnet/core/samples:aspnetapp \
@@ -11,7 +13,20 @@ az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westu
   --image ubuntu --command-line "tail -f /dev/null"
 ```
 
+## Web Applications
+
+```bash
+az container create -n cdw-dummysite-20190419 -g cdw-dummysite-20190419 -l westus2 \
+  --image appsvcsample/static-site \
+  --ip-address Public --ports 80 --dns-name-label cdw-dummysite-20190419
+
+az container create -n cdw-dummysite-20190419 -g cdw-dummysite-20190419 -l westus2 \
+  --image appsvcsample/python-helloworld \
+  --ip-address Public --ports 80 --dns-name-label cdw-dummysite-20190419
+```
+
 ## Windows Server 2016 Containers
+
 ```bash
 az container create -n cdw-winaci-20190307 -g cdw-winaci-20190307 -l westus2 --os-type Windows \ 
   --image mcr.microsoft.com/dotnet/core/samples:aspnetapp-nanoserver-sac2016 \
@@ -19,6 +34,7 @@ az container create -n cdw-winaci-20190307 -g cdw-winaci-20190307 -l westus2 --o
 ```
 
 ## Load Testing
+
 ```bash
 az container create -g cdw-loadtest-20190313 -n loadtest \
   --image bunchjesse/loadtest --restart-policy Never \
@@ -26,6 +42,7 @@ az container create -g cdw-loadtest-20190313 -n loadtest \
 ```
 
 ## Build Agents
+
 ```bash
 az container create -g cdw-containerbuildagent-20190108-rg -n cdw-containerbuildagent-20190108 \
   --image mcr.microsoft.com/azure-pipelines/vsts-agent:latest --restart-policy OnFailure \
@@ -33,6 +50,7 @@ az container create -g cdw-containerbuildagent-20190108-rg -n cdw-containerbuild
 ```
 
 ## Ubuntu Linux
+
 ```bash
 docker run -it --rm ubuntu
 ```
