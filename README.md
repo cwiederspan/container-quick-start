@@ -6,16 +6,21 @@ A sampling of quick and easy quickstarts for running various containers for test
 
 ```bash
 az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westus2 \
-  --image mcr.microsoft.com/dotnet/core/samples:aspnetapp \
-  --ip-address Public --ports 80 --dns-name-label cdw-dummysite-20190305
-  
-az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westus2 \
   --image ubuntu --command-line "tail -f /dev/null"
+
+  az container create -n cdw-bastion-20190503 -g cdw-bastion-20190503 -l centralus \
+  --image ubuntu --command-line "tail -f /dev/null" \
+  --vnet cdw-kubernetes-20190503-vnet \
+  --subnet cluster-subnet
 ```
 
 ## Web Applications
 
 ```bash
+az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westus2 \
+  --image mcr.microsoft.com/dotnet/core/samples:aspnetapp \
+  --ip-address Public --ports 80 --dns-name-label cdw-dummysite-20190305
+
 az container create -n cdw-dummysite-20190419 -g cdw-dummysite-20190419 -l westus2 \
   --image appsvcsample/static-site \
   --ip-address Public --ports 80 --dns-name-label cdw-dummysite-20190419
