@@ -7,11 +7,17 @@ A sampling of quick and easy quickstarts for running various containers for test
 ```bash
 az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westus2 \
   --image ubuntu --command-line "tail -f /dev/null"
+```
 
-  az container create -n cdw-bastion-20190503 -g cdw-bastion-20190503 -l centralus \
-  --image ubuntu --command-line "tail -f /dev/null" \
+## Bastion Host Utility
+
+```bash
+az container create -n cdw-kubernetes-20190503-aci -g cdw-kubernetes-20190503 -l centralus \
+  --image arunvelsriram/utils --command-line "tail -f /dev/null" \
   --vnet cdw-kubernetes-20190503-vnet \
-  --subnet cluster-subnet
+  --subnet bastion-subnet
+
+az container exec -n cdw-kubernetes-20190503-aci -g cdw-kubernetes-20190503 --exec-command './bin/bash'
 ```
 
 ## Web Applications
