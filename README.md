@@ -13,7 +13,7 @@ az container create -n cdw-dummysite-20190305 -g cdw-dummysite-20190305 -l westu
 
 ```bash
 az container create -n cdw-kubernetes-20190503-aci -g cdw-kubernetes-20190503 -l centralus \
-  --image arunvelsriram/utils --command-line "tail -f /dev/null" \
+  --image cwiederspan/bastion:latest \
   --vnet cdw-kubernetes-20190503-vnet \
   --subnet bastion-subnet
 
