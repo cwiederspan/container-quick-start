@@ -44,6 +44,24 @@ az container create -n cdw-winaci-20190307 -g cdw-winaci-20190307 -l westus2 --o
   --ip-address Public --ports 80 --dns-name-label cdw-winaci-20190307
 ```
 
+## Windows Container with VNET (DOES NOT YET WORK)
+
+```bash
+az container create \
+    --name cdw-winaci-20191004 \
+    --resource-group cdw-dummyaci-20191004 \
+    --location eastus2 \
+    --os-type Windows \
+    --image mcr.microsoft.com/dotnet/core/samples:aspnetapp \
+    --ports 80 \
+    --memory 3.5 \
+    --cpu 2 \
+    --vnet cdw-myvnet-20191004 \
+    --vnet-address-prefix 10.0.0.0/16 \
+    --subnet aci_mysubnet_20191004 \
+    --subnet-address-prefix 10.0.0.0/24
+```
+
 ## Load Testing
 
 ```bash
